@@ -30,7 +30,7 @@ class BaseCaptcha(object):
 
 class Antigate(BaseCaptcha):
     """
-    >>> ag = Antigate('2bee29404cccf08797ec7d76bbe5224f')
+    >>> ag = Antigate('*****9404cccf08797ec7d76bbe5224f')
     >>> float(ag.get_balance()) > -1
     True
     >>> egg = ag.get_text(open('/work/cm2/test/captcha.png', 'rb').read())
@@ -113,7 +113,7 @@ class Antigate(BaseCaptcha):
 class CaptchaBot(Antigate):
     """ captchabot with antigate interface
 
-    >>> ag = CaptchaBot('d9838504750060896ad6f13b5d3e7a9e')
+    >>> ag = CaptchaBot('*****504750060896ad6f13b5d3e7a9e')
     >>> float(ag.get_balance()) > -1
     True
     >>> egg = ag.get_text(open('/work/cm2/test/captcha.png', 'rb').read())
@@ -128,7 +128,7 @@ class CaptchaBot(Antigate):
 class RipCaptcha(Antigate):
     """ ripcaptcha with antigate interface
 
-    >>> ag = RipCaptcha('0349d1b3be91baab890f9154b227c569')
+    >>> ag = RipCaptcha('*****1b3be91baab890f9154b227c569')
     >>> float(ag.get_balance()) > -1
     True
     >>> egg = ag.get_text(open('/work/cm2/test/captcha.png', 'rb').read())
