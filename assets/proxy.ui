@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>785</width>
+    <height>584</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Proxy Checker 2 free</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item row="0" column="4">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Таймаут</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QSpinBox" name="threads_sb">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="value">
+          <number>3</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Потоков</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Цель</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QComboBox" name="target_cb"/>
+       </item>
+       <item row="0" column="5">
+        <widget class="QSpinBox" name="timeout_sb">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>999</number>
+         </property>
+         <property name="value">
+          <number>30</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="6">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTableView" name="tableView">
+      <property name="contextMenuPolicy">
+       <enum>Qt::ActionsContextMenu</enum>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+      <attribute name="verticalHeaderVisible">
+       <bool>true</bool>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>785</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="actionImport"/>
+    <addaction name="actionExport"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>О программе</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionStart"/>
+   <addaction name="separator"/>
+   <addaction name="actionParser"/>
+   <addaction name="actionImport"/>
+   <addaction name="actionExport"/>
+   <addaction name="separator"/>
+   <addaction name="actionClear"/>
+   <addaction name="actionTargets"/>
+   <addaction name="separator"/>
+   <addaction name="actionSetup"/>
+  </widget>
+  <action name="actionDelete">
+   <property name="icon">
+    <iconset>
+     <normaloff>delete.png</normaloff>delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Удалить</string>
+   </property>
+  </action>
+  <action name="actionStart">
+   <property name="icon">
+    <iconset>
+     <normaloff>control_play_blue.png</normaloff>control_play_blue.png</iconset>
+   </property>
+   <property name="text">
+    <string>Старт</string>
+   </property>
+  </action>
+  <action name="actionImport">
+   <property name="icon">
+    <iconset>
+     <normaloff>folder.png</normaloff>folder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Импорт</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="icon">
+    <iconset>
+     <normaloff>disk.png</normaloff>disk.png</iconset>
+   </property>
+   <property name="text">
+    <string>Экспорт</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="icon">
+    <iconset>
+     <normaloff>error_delete.png</normaloff>error_delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Очистить</string>
+   </property>
+  </action>
+  <action name="actionParser">
+   <property name="icon">
+    <iconset>
+     <normaloff>page_world.png</normaloff>page_world.png</iconset>
+   </property>
+   <property name="text">
+    <string>Парсер</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset>
+     <normaloff>aaaa32.png</normaloff>aaaa32.png</iconset>
+   </property>
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset>
+     <normaloff>door_in.png</normaloff>door_in.png</iconset>
+   </property>
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+  <action name="actionRegistration">
+   <property name="icon">
+    <iconset>
+     <normaloff>key.png</normaloff>key.png</iconset>
+   </property>
+   <property name="text">
+    <string>Регистрация</string>
+   </property>
+  </action>
+  <action name="actionTargets">
+   <property name="icon">
+    <iconset>
+     <normaloff>globe_place.png</normaloff>globe_place.png</iconset>
+   </property>
+   <property name="text">
+    <string>Цели</string>
+   </property>
+  </action>
+  <action name="actionStartSelected">
+   <property name="icon">
+    <iconset>
+     <normaloff>control_play_blue.png</normaloff>control_play_blue.png</iconset>
+   </property>
+   <property name="text">
+    <string>Проверить выбранные</string>
+   </property>
+   <property name="toolTip">
+    <string>Проверить выбранные</string>
+   </property>
+  </action>
+  <action name="actionBuy">
+   <property name="text">
+    <string>Купить</string>
+   </property>
+  </action>
+  <action name="actionSetup">
+   <property name="icon">
+    <iconset>
+     <normaloff>setting_tools.png</normaloff>setting_tools.png</iconset>
+   </property>
+   <property name="text">
+    <string>Настройка</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
